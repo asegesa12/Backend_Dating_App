@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "o2tz//NpjLwR2se1wt3DcdeERrQKDbBXIBdNBWu7rxpUTP2CM3Ex4yksDlBh1F1G8UqB8c8PeKDBecG6Fo+roA==",
+  "dgSpecHash": "NF5WlS21BHWtlv/gDvKhADocpuAZheyfIW3txglOzREZnHalbQQLctzD9YL4+1Gb3pltXe8LKbfBdrvoqgWuqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\roman\\OneDrive\\Escritorio\\Angular_Net_V2\\DatingApp_Backend\\API\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\roman\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\roman\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\roman\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.4\\microsoft.aspnetcore.authentication.jwtbearer.7.0.4.nupkg.sha512",
     "C:\\Users\\roman\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.20\\microsoft.data.sqlite.core.7.0.20.nupkg.sha512",

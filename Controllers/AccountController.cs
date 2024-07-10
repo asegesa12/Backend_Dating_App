@@ -20,25 +20,25 @@ namespace API.Controllers
             //Summary: If username already exist on the database, it wont allow the user
             // to use it. However if the username doesnt exist, it will be able to register the user.
             if (await UserExists(registerDto.Username)) return BadRequest("Username is taken");
-
+            return Ok();
             //Summary: HMAC Help us out to generate random password in our App
-            using var hmac = new HMACSHA512();
+            //using var hmac = new HMACSHA512();
 
-            var user = new AppUser
-            {
-                UserName = registerDto.Username,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-                PasswordSalt = hmac.Key
-            };
+            //var user = new AppUser
+            //{
+            //    UserName = registerDto.Username,
+            //    PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
+            //    PasswordSalt = hmac.Key
+            //};
 
-            context.Users.Add(user);
-            await context.SaveChangesAsync();
+            //context.Users.Add(user);
+            //await context.SaveChangesAsync();
 
-            return new UserDTO
-            {
-                Username = user.UserName,
-                Token = tokenService.CreateToken(user)
-            };
+            //return new UserDTO
+            //{
+            //    Username = user.UserName,
+            //    Token = tokenService.CreateToken(user)
+            //};
         }
 
         [HttpPost("login")]
