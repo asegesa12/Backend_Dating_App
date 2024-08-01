@@ -45,7 +45,9 @@ namespace API.Controllers
         public async Task<ActionResult<UserDTO>> Login(LoginDto loginDto)
         {
             //Summary: If the user is not found in our Db it will return an Unathorized
-            var user = await context.Users.FirstOrDefaultAsync(x =>
+            var user = await context.Users
+                .Include(p => p.Photos)
+                .FirstOrDefaultAsync(x =>
             x.UserName == loginDto.Username.ToLower());
 
             if (user == null) return Unauthorized("Invalid username");
@@ -69,7 +71,8 @@ namespace API.Controllers
             return new UserDTO
             {
                 Username = user.UserName,
-                Token = tokenService.CreateToken(user)
+                Token = tokenService.CreateToken(user),
+                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
             };
 
         }

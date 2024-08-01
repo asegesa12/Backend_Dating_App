@@ -7,6 +7,7 @@ using System.Text.Json;
 
 namespace API.Data
 {
+    // This class stands to populate users from a JSON File
     public class Seed
     {
         public static async Task SeedUsers(DataContext context)
